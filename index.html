@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Wallet Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💼 Lost Wallet Finder</h1>
+            <p>Help reunite lost wallets with their owners</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="showTab('report')">Report Lost</button>
+            <button class="tab-btn" onclick="showTab('found')">Report Found</button>
+            <button class="tab-btn" onclick="showTab('search')">Search Wallets</button>
+        </nav>
+
+        <!-- Report Lost Tab -->
+        <div id="report" class="tab-content active">
+            <h2>Report a Lost Wallet</h2>
+            <form id="lostForm">
+                <div class="form-group">
+                    <label>Your Name:</label>
+                    <input type="text" id="lostName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="lostEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" id="lostPhone">
+                </div>
+                <div class="form-group">
+                    <label>Location Lost:</label>
+                    <input type="text" id="lostLocation" placeholder="e.g., Downtown, Coffee Shop" required>
+                </div>
+                <div class="form-group">
+                    <label>Date Lost:</label>
+                    <input type="date" id="lostDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Wallet Description:</label>
+                    <textarea id="lostDescription" placeholder="Color, brand, distinctive features..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Report Lost Wallet</button>
+            </form>
+        </div>
+
+        <!-- Report Found Tab -->
+        <div id="found" class="tab-content">
+            <h2>Report a Found Wallet</h2>
+            <form id="foundForm">
+                <div class="form-group">
+                    <label>Your Name:</label>
+                    <input type="text" id="foundName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="foundEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" id="foundPhone">
+                </div>
+                <div class="form-group">
+                    <label>Location Found:</label>
+                    <input type="text" id="foundLocation" placeholder="e.g., Downtown, Coffee Shop" required>
+                </div>
+                <div class="form-group">
+                    <label>Date Found:</label>
+                    <input type="date" id="foundDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Wallet Description:</label>
+                    <textarea id="foundDescription" placeholder="Color, brand, distinctive features..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Report Found Wallet</button>
+            </form>
+        </div>
+
+        <!-- Search Tab -->
+        <div id="search" class="tab-content">
+            <h2>Search Wallets</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by location, color, or description...">
+                <button class="btn btn-secondary" onclick="searchWallets()">Search</button>
+            </div>
+            <div id="resultsContainer" class="results-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
